@@ -15,11 +15,11 @@ public class Tile {
             return false;
         }
         Tile tile = (Tile) other;
-        return value == tile.value;
+        return tileNumber == tile.tileNumber;
     }
 
     @Override
     public int hashCode() {
-        return Integer.hashCode(value);
+        return Integer.hashCode(tileNumber);
     }
 }

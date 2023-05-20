@@ -1,19 +1,31 @@
 public class Node {
-    private State currentState;
-    private Node previousNode;
-    private Action actionToGetHere;
+    private State state;
+    private Node parent;
+    private Action action;
 
-    public Node(State currentState, Node previousNode, Action actionToGetHere) {
-        this.currentState = currentState;
-        this.previousNode = previousNode;
-        this.actionToGetHere = actionToGetHere;
+    public State getState() {
+        return state;
+    }
+
+    public Node getParent() {
+        return parent;
+    }
+
+    public Action getAction() {
+        return action;
+    }
+
+    public Node(State state, Node parent, Action action) {
+        this.state = state;
+        this.parent = parent;
+        this.action = action;
     }
 
     public Node[] expand() {
-        Action[] actions = currentState.actions();
+        Action[] actions = state.actions();
         Node[] expansion = new Node[actions.length];
         for (int i = 0; i < actions.length; i++) {
-            State newState = currentState.result(actions[i]);
+            State newState = state.result(actions[i]);
             expansion[i] = new Node(newState, this, actions[i]);
         }
         return expansion;

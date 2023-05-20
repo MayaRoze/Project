@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d5b0606-813b-4ef5-a530-81429abc36d7" name="Changes" comment="Second ver 16.5.23, 20:56">
+    <list default="true" id="0d5b0606-813b-4ef5-a530-81429abc36d7" name="Changes" comment="Added methods in Node class, 17.5.23 morning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
     <list id="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" name="Changes by Melech" comment="Changes by Melech" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +66,8 @@
       <workItem from="1684227292475" duration="1429000" />
       <workItem from="1684242175206" duration="306000" />
       <workItem from="1684253855093" duration="6360000" />
-      <workItem from="1684305956622" duration="891000" />
+      <workItem from="1684305956622" duration="1161000" />
+      <workItem from="1684604061161" duration="4403000" />
     </task>
     <task id="LOCAL-00001" summary="First ver 16.5.23">
       <created>1684242289244</created>
@@ -85,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684260177397</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added methods in Node class, 17.5.23 morning">
+      <created>1684306930402</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684306930402</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +131,7 @@
     <MESSAGE value="First ver 16.5.23" />
     <MESSAGE value="Second ver 16.5.23, 20:56" />
     <MESSAGE value="Changes by Melech" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Melech" />
+    <MESSAGE value="Added methods in Node class, 17.5.23 morning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods in Node class, 17.5.23 morning" />
   </component>
 </project>

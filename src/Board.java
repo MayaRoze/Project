@@ -16,10 +16,10 @@ public class Board {
             for (int j = 0; j < colNum; j++) {
                 if (!foundEmpty && components[j] == "_") {
                     foundEmpty = true;
-                    board[j][i] = new Tile(0);
-                    emptyTileIndex = new int[]{j, i};
+                    board[i][j] = new Tile(0);
+                    emptyTileIndex = new int[]{i, j};
                 } else {
-                    board[j][i] = new Tile(Integer.parseInt(components[j]));
+                    board[i][j] = new Tile(Integer.parseInt(components[j]));
                 }
             }
         }
@@ -31,6 +31,10 @@ public class Board {
 
     public int[] getEmptyTileIndex() {
         return emptyTileIndex;
+    }
+
+    public Tile getTile(int row, int col) {
+        return board[row][col];
     }
 
     public Placement getEmptyTilePlacement() {
@@ -50,21 +54,21 @@ public class Board {
         Tile temp;
         switch (dir) {
             case UP:
-                temp = board[emptyTileIndex[1] - 1][emptyTileIndex[0]];
-                board[emptyTileIndex[1] - 1][emptyTileIndex[0]] = new Tile(0);
-                board[emptyTileIndex[1]][emptyTileIndex[0]] = temp;
+                temp = board[emptyTileIndex[0] + 1][emptyTileIndex[1]];
+                board[emptyTileIndex[0] + 1][emptyTileIndex[1]] = new Tile(0);
+                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
             case DOWN:
-                temp = board[emptyTileIndex[1] + 1][emptyTileIndex[0]];
-                board[emptyTileIndex[1] + 1][emptyTileIndex[0]] = new Tile(0);
-                board[emptyTileIndex[1]][emptyTileIndex[0]] = temp;
+                temp = board[emptyTileIndex[0] - 1][emptyTileIndex[1]];
+                board[emptyTileIndex[0] - 1][emptyTileIndex[1]] = new Tile(0);
+                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
             case LEFT:
-                temp = board[emptyTileIndex[1]][emptyTileIndex[0] - 1];
-                board[emptyTileIndex[1]][emptyTileIndex[0] - 1] = new Tile(0);
-                board[emptyTileIndex[1]][emptyTileIndex[0]] = temp;
+                temp = board[emptyTileIndex[0]][emptyTileIndex[1] - 1];
+                board[emptyTileIndex[0]][emptyTileIndex[1] - 1] = new Tile(0);
+                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
             case RIGHT:
-                temp = board[emptyTileIndex[1]][emptyTileIndex[0] + 1];
-                board[emptyTileIndex[1] - 1][emptyTileIndex[0] + 1] = new Tile(0);
-                board[emptyTileIndex[1]][emptyTileIndex[0]] = temp;
+                temp = board[emptyTileIndex[0]][emptyTileIndex[1] + 1];
+                board[emptyTileIndex[0]][emptyTileIndex[1] + 1] = new Tile(0);
+                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
         }
     }
 
