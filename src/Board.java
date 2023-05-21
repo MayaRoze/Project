@@ -14,7 +14,7 @@ public class Board {
         for (int i = 0; i < rowNum; i++) {
             String[] components = rows[i].split(" ");
             for (int j = 0; j < colNum; j++) {
-                if (!foundEmpty && components[j] == "_") {
+                if (!foundEmpty && components[j].equals("_")) {
                     foundEmpty = true;
                     board[i][j] = new Tile(0);
                     emptyTileIndex = new int[]{i, j};
@@ -35,6 +35,14 @@ public class Board {
 
     public Tile getTile(int row, int col) {
         return board[row][col];
+    }
+
+    public void setTile(int row, int col, Tile tile) {
+        if (row >= board.length) board[row - 1][col] = tile;
+        else if (col >= board[0].length) board[row][col - 1] = tile;
+        else if (row < 0) board[row + 1][col] = tile;
+        else if (col < 0) board[row][col + 1] = tile;
+        else board[row][col] = tile;
     }
 
     public Placement getEmptyTilePlacement() {
@@ -58,17 +66,17 @@ public class Board {
                 board[emptyTileIndex[0] + 1][emptyTileIndex[1]] = new Tile(0);
                 board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
             case DOWN:
-                temp = board[emptyTileIndex[0] - 1][emptyTileIndex[1]];
-                board[emptyTileIndex[0] - 1][emptyTileIndex[1]] = new Tile(0);
-                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
+                temp = getTile(emptyTileIndex[0] - 1, emptyTileIndex[1]);
+                setTile(emptyTileIndex[0] - 1, emptyTileIndex[1], new Tile(0));
+                setTile(emptyTileIndex[0], emptyTileIndex[1], temp);
             case LEFT:
-                temp = board[emptyTileIndex[0]][emptyTileIndex[1] - 1];
-                board[emptyTileIndex[0]][emptyTileIndex[1] - 1] = new Tile(0);
-                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
+                temp = getTile(emptyTileIndex[0], emptyTileIndex[1] - 1);
+                setTile(emptyTileIndex[0], emptyTileIndex[1] - 1, new Tile(0));
+                setTile(emptyTileIndex[0], emptyTileIndex[1], temp);
             case RIGHT:
-                temp = board[emptyTileIndex[0]][emptyTileIndex[1] + 1];
-                board[emptyTileIndex[0]][emptyTileIndex[1] + 1] = new Tile(0);
-                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
+                temp = getTile(emptyTileIndex[0], emptyTileIndex[1] + 1);
+                setTile(emptyTileIndex[0], emptyTileIndex[1] + 1, new Tile(0));
+                setTile(emptyTileIndex[0], emptyTileIndex[1], temp);
         }
     }
 
@@ -83,6 +91,6 @@ public class Board {
 
     @Override
     public int hashCode() {
-        return Arrays.deepHashCode(tiles);
+        return Arrays.deepHashCode(board);
     }
 }

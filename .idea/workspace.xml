@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d5b0606-813b-4ef5-a530-81429abc36d7" name="Changes" comment="Added methods in Node class, 17.5.23 morning">
+    <list default="true" id="0d5b0606-813b-4ef5-a530-81429abc36d7" name="Changes" comment="Finished everything (supposedly) except heuristicValue, 20.5.23">
+      <change afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Placement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tile.java" afterDir="false" />
     </list>
-    <list id="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" name="Changes by Melech" comment="Changes by Melech" />
+    <list id="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" name="Changes by Melech" comment="Changes by Melech">
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +32,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Board.java">
+      <ranges>
+        <range start1="16" end1="17" start2="16" end2="17" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+        <range start1="36" end1="36" start2="36" end2="40" changelist="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" />
+        <range start1="38" end1="38" start2="42" end2="50" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+        <range start1="56" end1="59" start2="68" end2="71" changelist="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" />
+        <range start1="60" end1="63" start2="72" end2="75" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+        <range start1="64" end1="67" start2="76" end2="79" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+        <range start1="68" end1="71" start2="80" end2="83" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+        <range start1="80" end1="81" start2="92" end2="93" changelist="8a1ac333-6e8b-4a74-87a3-33d96ab1ef65" />
+        <range start1="85" end1="86" start2="97" end2="98" changelist="0d5b0606-813b-4ef5-a530-81429abc36d7" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="2PrtyFFDMqdY8QtTeNTak5cXynh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -67,7 +84,8 @@
       <workItem from="1684242175206" duration="306000" />
       <workItem from="1684253855093" duration="6360000" />
       <workItem from="1684305956622" duration="1161000" />
-      <workItem from="1684604061161" duration="4403000" />
+      <workItem from="1684604061161" duration="4498000" />
+      <workItem from="1684678353402" duration="2915000" />
     </task>
     <task id="LOCAL-00001" summary="First ver 16.5.23">
       <created>1684242289244</created>
@@ -97,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684306930402</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished everything (supposedly) except heuristicValue, 20.5.23">
+      <created>1684608578203</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684608578203</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +157,23 @@
     <MESSAGE value="Second ver 16.5.23, 20:56" />
     <MESSAGE value="Changes by Melech" />
     <MESSAGE value="Added methods in Node class, 17.5.23 morning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods in Node class, 17.5.23 morning" />
+    <MESSAGE value="Finished everything (supposedly) except heuristicValue, 20.5.23" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished everything (supposedly) except heuristicValue, 20.5.23" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/State.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

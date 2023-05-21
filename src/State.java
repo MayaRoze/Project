@@ -11,6 +11,7 @@ public class State {
         Tile[][] tiles = board.getBoard();
         int rowNum = tiles.length;
         int colNum = tiles[0].length;
+        if (rowNum == 1 & colNum == 1) return true;
         if (tiles[rowNum - 1][colNum - 1].getTileNumber() != 0) return false;
 
         int currentNum = 1;
