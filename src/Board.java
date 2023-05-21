@@ -34,6 +34,10 @@ public class Board {
     }
 
     public Tile getTile(int row, int col) {
+        if (row >= board.length) return board[row - 1][col];
+        if (col >= board[0].length) return board[row][col - 1];
+        if (row < 0) return board[row + 1][col];
+        if (col < 0) return board[row][col + 1];
         return board[row][col];
     }
 
@@ -62,9 +66,9 @@ public class Board {
         Tile temp;
         switch (dir) {
             case UP:
-                temp = board[emptyTileIndex[0] + 1][emptyTileIndex[1]];
-                board[emptyTileIndex[0] + 1][emptyTileIndex[1]] = new Tile(0);
-                board[emptyTileIndex[0]][emptyTileIndex[1]] = temp;
+                temp = getTile(emptyTileIndex[0] + 1, emptyTileIndex[1]);
+                setTile(emptyTileIndex[0] + 1, emptyTileIndex[1], new Tile(0));
+                setTile(emptyTileIndex[0], emptyTileIndex[1], temp);
             case DOWN:
                 temp = getTile(emptyTileIndex[0] - 1, emptyTileIndex[1]);
                 setTile(emptyTileIndex[0] - 1, emptyTileIndex[1], new Tile(0));
@@ -86,7 +90,7 @@ public class Board {
             return false;
         }
         Board board = (Board) other;
-        return Arrays.deepEquals(tiles, board.tiles);
+        return Arrays.deepEquals(this.board, board.board);
     }
 
     @Override

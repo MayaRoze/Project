@@ -1,23 +1,3 @@
-
-enum Direction {
-    UP,
-    DOWN,
-    RIGHT,
-    LEFT
-}
-
-enum Placement {
-    TOP_WALL,
-    RIGHT_WALL,
-    LEFT_WALL,
-    BOTTOM_WALL,
-    TOP_RIGHT,
-    TOP_LEFT,
-    BOTTOM_RIGHT,
-    BOTTOM_LEFT,
-    INTERNAL
-}
-
 public class Main {
     public static void main(String[] args) {
         String[] boards = {"_ 1",
