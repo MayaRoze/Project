@@ -35,6 +35,22 @@ public class State {
         int x = emptyTileIndex[0];
         int y = emptyTileIndex[1];
         switch (board.getEmptyTilePlacement()) {
+            case ONE_ON_ONE:
+                return new Action[]{};
+            case TOP_ONE_COL:
+                return new Action[]{new Action(board.getTile(x + 1, y), Direction.UP)};
+            case BOTTOM_ONE_COL:
+                return new Action[]{new Action(board.getTile(x - 1, y), Direction.DOWN)};
+            case INTERNAL_ONE_COL:
+                return new Action[]{new Action(board.getTile(x + 1, y), Direction.UP),
+                        new Action(board.getTile(x - 1, y), Direction.DOWN)};
+            case LEFT_ONE_ROW:
+                return new Action[]{new Action(board.getTile(x, y + 1), Direction.LEFT)};
+            case RIGHT_ONE_ROW:
+                return new Action[]{new Action(board.getTile(x, y - 1), Direction.RIGHT)};
+            case INTERNAL_ONE_ROW:
+                return new Action[]{new Action(board.getTile(x, y - 1), Direction.RIGHT),
+                        new Action(board.getTile(x, y + 1), Direction.LEFT)};
             case TOP_LEFT:
                 return new Action[]{new Action(board.getTile(x + 1, y), Direction.UP),
                         new Action(board.getTile(x, y + 1), Direction.LEFT)};
@@ -73,7 +89,7 @@ public class State {
     }
 
     public State result(Action action) {
-        State result = new State(board);
+        State result = new State(this.board.getBoardCopy());
         Board resultBoard = result.board;
         resultBoard.swapWithEmpty(action.dir);
         return result;
