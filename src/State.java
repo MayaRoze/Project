@@ -6,6 +6,9 @@ public class State {
         this.board = board;
     }
 
+    public Board getBoard() {
+        return board;
+    }
 
     boolean isGoal() {
         Tile[][] tiles = board.getBoard();
@@ -20,9 +23,8 @@ public class State {
                 Tile tile = tiles[i][j];
                 int tileNum = tile.getTileNumber();
                 if (i == rowNum - 1 && j == colNum - 1) continue;
-                else if (tileNum == currentNum) {
-                    currentNum++;
-                }
+                else if (tileNum == currentNum) currentNum++;
+                else return false;
             }
         }
         return true;

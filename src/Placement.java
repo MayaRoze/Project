@@ -1,4 +1,5 @@
 public enum Placement {
+    ONE_ON_ONE,
     TOP_WALL,
     RIGHT_WALL,
     LEFT_WALL,
@@ -7,5 +8,11 @@ public enum Placement {
     TOP_LEFT,
     BOTTOM_RIGHT,
     BOTTOM_LEFT,
+    BOTTOM_ONE_COL,
+    TOP_ONE_COL,
+    INTERNAL_ONE_COL,
+    RIGHT_ONE_ROW,
+    LEFT_ONE_ROW,
+    INTERNAL_ONE_ROW,
     INTERNAL
 }
